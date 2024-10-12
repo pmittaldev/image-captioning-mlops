@@ -1,0 +1,10 @@
+auth:
+  existingSecret: postgres-credentials  # Reference the Kubernetes secret
+  postgresqlPasswordKey: postgres-password  # The key inside the secret for the password
+  database: mlflow  # Database name
+
+primary:
+  persistence:
+    enabled: true  # Enable persistent volume
+    size: 10Gi     # Size of the persistent volume
+    storageClass: ""  # Default storage class

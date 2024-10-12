@@ -1,0 +1,14 @@
+mlflow:
+  backendStore:
+    database:
+      driver: postgresql
+      host: postgresql.default.svc.cluster.local  # PostgreSQL service name
+      port: 5432
+      username: postgres
+      passwordFromSecret: postgres-credentials  # Referencing the PostgreSQL secret
+      dbName: mlflow
+
+  defaultArtifactRoot: gs://your-mlflow-bucket  # GCS bucket for storing artifacts
+
+  service:
+    type: ClusterIP  # Use ClusterIP as Ingress will handle traffic routing
